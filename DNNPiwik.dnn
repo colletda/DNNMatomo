@@ -1,0 +1,88 @@
+﻿<dotnetnuke type="Package" version="5.0">
+  <packages><package name="DNNPiwik" type="Module" version="1.0.2">
+  <friendlyName>DNNPiwik</friendlyName>
+  <description>DotNetNuke Piwik integration module</description>
+  <owner>
+    <name>Alberto Velo</name>
+    <organization />
+    <url>http://albe.ihnet.it/Software/DNNPiwik.aspx</url>
+    <email>trapias@gmail.com</email>
+  </owner>
+  <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
+  <releaseNotes />
+  <components>
+    <component type="Module">
+      <desktopModule>
+        <moduleName>DNNPiwik</moduleName>
+        <foldername>DNNPiwik</foldername>
+        <businessControllerClass />
+        <supportedFeatures />
+        <moduleDefinitions>
+          <moduleDefinition>
+            <friendlyName>DNNPiwik</friendlyName>
+            <defaultCacheTime>0</defaultCacheTime>
+            <moduleControls>
+              <moduleControl>
+                <controlKey />
+                <controlSrc>DesktopModules/DNNPiwik/ViewDNNPiwik.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle />
+                <controlType>View</controlType>
+                <iconFile />
+                <helpUrl />
+                <viewOrder>0</viewOrder>
+              </moduleControl>
+              <moduleControl>
+                <controlKey>Settings</controlKey>
+                <controlSrc>DesktopModules/DNNPiwik/Settings.ascx</controlSrc>
+                <supportsPartialRendering>False</supportsPartialRendering>
+                <controlTitle>DNNPiwik Settings</controlTitle>
+                <controlType>Admin</controlType>
+                <iconFile />
+                <helpUrl />
+              </moduleControl>
+            </moduleControls>
+          </moduleDefinition>
+        </moduleDefinitions>
+      </desktopModule>
+    </component>
+    <component type="File">
+      <files>
+        <basePath>DesktopModules\DNNPiwik</basePath>
+        <file>
+          <path>App_LocalResources</path>
+          <name>Settings.ascx.resx</name>
+        </file>
+        <file>
+          <path>App_LocalResources</path>
+          <name>ViewDNNPiwik.ascx.resx</name>
+        </file>
+        <file>
+          <path>Documentation</path>
+          <name>Documentation.css</name>
+        </file>
+        <file>
+          <path>Documentation</path>
+          <name>Documentation.html</name>
+        </file>
+        <file>
+          <path>Documentation</path>
+          <name>logo.gif</name>
+        </file>
+        <file>
+          <name>Settings.ascx</name>
+        </file>
+        <file>
+          <name>Settings.ascx.vb</name>
+        </file>
+        <file>
+          <name>ViewDNNPiwik.ascx</name>
+        </file>
+        <file>
+          <name>ViewDNNPiwik.ascx.vb</name>
+        </file>
+      </files>
+    </component>
+  </components>
+</package></packages>
+</dotnetnuke>
