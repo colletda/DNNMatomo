@@ -1,4 +1,4 @@
-DNNPiwik
+DNNMatomo
 ========
 
-Piwik Analytics for DNN
+Matomo Analytics Module for CMS DNN. Forked from DNNPiwik.
