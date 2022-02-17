@@ -1,11 +1,11 @@
 ﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="Matomo" type="Module" version="1.0.0">
-  <friendlyName>Matomo</friendlyName>
+  <packages><package name="DNNMatomo" type="Module" version="1.0.0">
+  <friendlyName>DNNMatomo</friendlyName>
   <description>Matomo integration module</description>
   <owner>
-    <name>Daniel Collet</name>
+    <name>Daniel Collet und weitere</name>
     <organization />
-    <url></url>
+    <url>https://github.com/colletda/DNNMatomo</url>
     <email></email>
   </owner>
   <license>The license for this package is not currently included within the installation file, please check with the vendor for full license details.</license>
@@ -13,18 +13,18 @@
   <components>
     <component type="Module">
       <desktopModule>
-        <moduleName>Matomo</moduleName>
-        <foldername>Matomo</foldername>
+        <moduleName>DNNMatomo</moduleName>
+        <foldername>DNNMatomo</foldername>
         <businessControllerClass />
         <supportedFeatures />
         <moduleDefinitions>
           <moduleDefinition>
-            <friendlyName>Matomo</friendlyName>
+            <friendlyName>DNNMatomo</friendlyName>
             <defaultCacheTime>0</defaultCacheTime>
             <moduleControls>
               <moduleControl>
                 <controlKey />
-                <controlSrc>DesktopModules/Matomo/View.ascx</controlSrc>
+                <controlSrc>DesktopModules/DNNMatomo/View.ascx</controlSrc>
                 <supportsPartialRendering>False</supportsPartialRendering>
                 <controlTitle />
                 <controlType>View</controlType>
@@ -34,7 +34,7 @@
               </moduleControl>
               <moduleControl>
                 <controlKey>Settings</controlKey>
-                <controlSrc>DesktopModules/Matomo/Settings.ascx</controlSrc>
+                <controlSrc>DesktopModules/DNNMatomo/Settings.ascx</controlSrc>
                 <supportsPartialRendering>False</supportsPartialRendering>
                 <controlTitle>Matomo Settings</controlTitle>
                 <controlType>Admin</controlType>
@@ -48,7 +48,7 @@
     </component>
     <component type="File">
       <files>
-        <basePath>DesktopModules\Matomo</basePath>
+        <basePath>DesktopModules\DNNMatomo</basePath>
         <file>
           <path>App_LocalResources</path>
           <name>Settings.ascx.resx</name>
@@ -81,6 +81,10 @@
         <file>
           <name>View.ascx.vb</name>
         </file>
+            <file>
+              <path>Images</path>
+              <name>icon_extensions_32px.png</name>
+            </file>         
       </files>
     </component>
   </components>
