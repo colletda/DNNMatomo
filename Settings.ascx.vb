@@ -1,5 +1,5 @@
 '
-' DotNetNuke® - http://www.dotnetnuke.com
+' DotNetNukeÂ® - http://www.dotnetnuke.com
 ' Copyright (c) 2002-2006
 ' by Perpetual Motion Interactive Systems Inc. ( http://www.perpetualmotion.ca )
 '
@@ -23,7 +23,7 @@ Imports System.Web.UI
 Imports DotNetNuke.Entities.Modules
 Imports System.Collections.Generic
 
-Namespace Trapias.Modules.DNNPiwik
+Namespace Matomo.Modules.DNNMatomo
 
     ''' -----------------------------------------------------------------------------
     ''' <summary>
@@ -52,14 +52,14 @@ Namespace Trapias.Modules.DNNPiwik
             Try
                 If (Page.IsPostBack = False) Then
 
-                    'piwik_site_id
-                    If CType(TabModuleSettings("piwik_site_id"), String) <> "" Then
-                        txtpiwik_site_id.Text = CType(TabModuleSettings("piwik_site_id"), String)
+                    'Matomo_site_id
+                    If CType(TabModuleSettings("matomo_site_id"), String) <> "" Then
+                        txtpiwik_site_id.Text = CType(TabModuleSettings("matomo_site_id"), String)
                     End If
 
-                    'PiwikHost
-                    If CType(TabModuleSettings("PiwikHost"), String) <> "" Then
-                        txtPiwikHost.Text = CType(TabModuleSettings("PiwikHost"), String)
+                    'MatomoHost
+                    If CType(TabModuleSettings("matomoHost"), String) <> "" Then
+                        txtPiwikHost.Text = CType(TabModuleSettings("matomoHost"), String)
                     End If
 
                     'HideRoles
@@ -88,10 +88,10 @@ Namespace Trapias.Modules.DNNPiwik
                 Dim objModules As New Entities.Modules.ModuleController
 
                 'piwik_site_id
-                objModules.UpdateTabModuleSetting(TabModuleId, "piwik_site_id", txtpiwik_site_id.Text)
+            objModules.UpdateTabModuleSetting(TabModuleId, "matomo_site_id", txtmatomo_site_id.Text)
 
                 'PiwikHost
-                objModules.UpdateTabModuleSetting(TabModuleId, "PiwikHost", txtPiwikHost.Text)
+            objModules.UpdateTabModuleSetting(TabModuleId, "MatomoHost", txtMatomoHost.Text)
 
                 'HideRoles
                 Dim sHideRoles As String = ""
