@@ -1,6 +1,6 @@
 <%@ Control Language="vb" AutoEventWireup="false" CodeFile="Settings.ascx.vb" Inherits="Matomo.Modules.DNNMatomo.Settings" %>
 <%@ Register TagPrefix="dnn" TagName="Label" Src="~/controls/LabelControl.ascx" %>
-<table cellspacing="0" cellpadding="2" border="0" summary="DNNPiwik Settings Design Table">
+<table cellspacing="0" cellpadding="2" border="0" summary="DNNMatomo Settings Design Table">
     <tr>
         <td class="SubHead" width="150"><dnn:label id="lblmatomo_site_id" runat="server" controlname="txtmatomo_site_id" suffix=":"></dnn:label></td>
         <td valign="bottom" >
