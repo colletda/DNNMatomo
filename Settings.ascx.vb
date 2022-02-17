@@ -54,12 +54,12 @@ Namespace Matomo.Modules.DNNMatomo
 
                     'Matomo_site_id
                     If CType(TabModuleSettings("matomo_site_id"), String) <> "" Then
-                        txtpiwik_site_id.Text = CType(TabModuleSettings("matomo_site_id"), String)
+                    txtmatomo_site_id.Text = CType(TabModuleSettings("matomo_site_id"), String)
                     End If
 
                     'MatomoHost
                     If CType(TabModuleSettings("matomoHost"), String) <> "" Then
-                        txtPiwikHost.Text = CType(TabModuleSettings("matomoHost"), String)
+                    txtMatomoHost.Text = CType(TabModuleSettings("matomoHost"), String)
                     End If
 
                     'HideRoles
