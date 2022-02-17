@@ -1,7 +1,7 @@
 ﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="DNNMatomo" type="Module" version="1.0.0">
-  <friendlyName>DNNMatomo</friendlyName>
-  <description>DNN Matomo integration module</description>
+  <packages><package name="Matomo" type="Module" version="1.0.0">
+  <friendlyName>Matomo</friendlyName>
+  <description>Matomo integration module</description>
   <owner>
     <name>Daniel Collet</name>
     <organization />
