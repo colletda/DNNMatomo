@@ -28,7 +28,7 @@
                 <supportsPartialRendering>False</supportsPartialRendering>
                 <controlTitle />
                 <controlType>View</controlType>
-                <iconFile />
+                <iconFile>/Images/matomo.png</iconFile>
                 <helpUrl />
                 <viewOrder>0</viewOrder>
               </moduleControl>
@@ -38,7 +38,7 @@
                 <supportsPartialRendering>False</supportsPartialRendering>
                 <controlTitle>Matomo Settings</controlTitle>
                 <controlType>Admin</controlType>
-                <iconFile />
+                <iconFile>/Images/matomo.png</iconFile>
                 <helpUrl />
               </moduleControl>
             </moduleControls>
