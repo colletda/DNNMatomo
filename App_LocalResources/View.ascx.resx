@@ -118,6 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ModuleHelp.Text" xml:space="preserve">
-    <value>&lt;P&gt;DotNetNuke Piwik integration module</value>
+    <value>&lt;P&gt;DNN Matomo integration module</value>
   </data>
 </root>
