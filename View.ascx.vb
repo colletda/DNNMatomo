@@ -1,5 +1,5 @@
 '
-' DotNetNuke® - http://www.dotnetnuke.com
+' DotNetNukeÂ® - http://www.dotnetnuke.com
 ' Copyright (c) 2002-2006
 ' by Perpetual Motion Interactive Systems Inc. ( http://www.perpetualmotion.ca )
 '
@@ -22,7 +22,7 @@ Imports System.Web.UI
 Imports System.Collections.Generic
 Imports System.Reflection
 
-Namespace Trapias.Modules.DNNPiwik
+Namespace Matomo.Modules.DNNMatomo
 
     ''' -----------------------------------------------------------------------------
     ''' <summary>
@@ -33,7 +33,7 @@ Namespace Trapias.Modules.DNNPiwik
     ''' <history>
     ''' </history>
     ''' -----------------------------------------------------------------------------
-    Partial Class ViewDNNPiwik
+    Partial Class View
         Inherits Entities.Modules.PortalModuleBase
 
 #Region "Private Members"
@@ -48,7 +48,7 @@ Namespace Trapias.Modules.DNNPiwik
             Else
                 Dim msg As New Label
                 msg.CssClass = "Normal"
-                msg.Text = "DNN PIWIK Integration Module"
+            msg.Text = "DNN Matomo Integration Module"
                 Me.Controls.Add(msg)
             End If
         End Sub
@@ -76,48 +76,32 @@ Namespace Trapias.Modules.DNNPiwik
                     Next
                 End If
 
-                If CType(Settings("piwik_site_id"), String) <> "" Then
+            If CType(Settings("matomo_site_id"), String) <> "" Then
 
-                    'Piwik Host: if not given assume it's on "localhost/piwik"
-                    Dim PiwikHost As String = ""
-                    If CType(Settings("PiwikHost"), String) <> "" Then
-                        PiwikHost = Settings("PiwikHost")
-                        If Not PiwikHost.EndsWith("/") Then PiwikHost &= "/"
+                'Matomo Host: if not given assume it's on "localhost/matomo"
+                Dim MatomoHost As String = ""
+                If CType(Settings("MatomoHost"), String) <> "" Then
+                    MatomoHost = Settings("MatomoHost")
+                    If Not MatomoHost.EndsWith("/") Then MatomoHost &= "/"
                     Else
-                        PiwikHost = "localhost/piwik/"
+                        MatomoHost = "localhost/matomo/"
                     End If
 
-                    Dim sScript As String = "<script type=""text/javascript"">"
-                    sScript &= "var pkBaseURL = ((""https:"" == document.location.protocol) ? ""https://" & PiwikHost & """ : ""http://" & PiwikHost & """);"
-                    sScript &= "document.write(unescape(""%3Cscript src='"" + pkBaseURL + ""piwik.js' type='text/javascript'%3E%3C/script%3E""));"""""
-                    sScript &= "</script><script type=""text/javascript"">"
-                    sScript &= "try {var piwikTracker = Piwik.getTracker(pkBaseURL + ""piwik.php"", " & Settings("piwik_site_id") & ");"
+                    Dim sScript As String = "<!-- Matomo -->"
+                    sScript &= "<script type=""text/javascript"">"
+                    sScript &= "var _paq = window._paq = window._paq || [];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);"
+                    sScript &= "(function() {"
+                    sScript &= "var u=""" & MatomoHost & """;"
+                    sScript &= "_paq.push(['setTrackerUrl', u+'matomo.php']);"
+                    sScript &= "_paq.push(['setSiteId', '" & Settings("matomo_site_id") & "']);"
+                    sScript &= "var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];"
+                    sScript &= "g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);"
+                    sScript &= "})();"
+                    sScript &= "</script>"
+                    sScript &= "<!-- End Matomo Code -->"
+ 
 
-                    'page title
-                    '01.00.01: new method to save
-                    Dim sTitle As String = ""
-                    Try
-                        'first get title from page (some module might have modified it)
-                        If Not Page.FindControl("PageTitle") Is Nothing Then
-                            sTitle = CType(Page.FindControl("PageTitle"), HtmlGenericControl).InnerText
-                        End If
-                    Catch ex As Exception
-                    End Try
-                    'if empty string load DNN tab title
-                    If sTitle.Trim = "" Then
-                        Dim tab As DotNetNuke.Entities.Tabs.TabInfo = TabController.CurrentPage
-                        sTitle = IIf(tab.Title = String.Empty, tab.TabName, tab.Title)
-                    End If
-                    sScript &= "piwikTracker.setDocumentTitle(""" & sTitle & """);"
-
-                    'track
-                    sScript &= "piwikTracker.trackPageView();"
-                    sScript &= "piwikTracker.enableLinkTracking();"
-
-                    'noscript
-                    sScript &= "} catch( err ) {}</script><noscript><p><img src=""http://" & PiwikHost & "/piwik.php?idsite=" & Settings("piwik_site_id") & """ style=""border:0"" alt=""""/></p></noscript>"
-
-                    Me.Page.ClientScript.RegisterStartupScript(GetType(System.String), "DNNPiwik", sScript)
+                    Me.Page.ClientScript.RegisterStartupScript(GetType(System.String), "DNNMatomo", sScript)
 
                 Else
                     DotNetNuke.UI.Skins.Skin.AddModuleMessage(Me, "Module must be configured", Skins.Controls.ModuleMessage.ModuleMessageType.RedError)
