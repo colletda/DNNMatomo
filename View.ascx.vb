@@ -87,20 +87,10 @@ Namespace Matomo.Modules.DNNMatomo
                         MatomoHost = "localhost/matomo/"
                     End If
 
-                    Dim sScript As String = "<!-- Matomo -->"
-                    sScript &= "<script type=""text/javascript"">"
-                    sScript &= "var _paq = window._paq = window._paq || [];_paq.push(['trackPageView']);_paq.push(['enableLinkTracking']);"
-                    sScript &= "(function() {"
-                    sScript &= "var u=""" & MatomoHost & """;"
-                    sScript &= "_paq.push(['setTrackerUrl', u+'matomo.php']);"
-                    sScript &= "_paq.push(['setSiteId', '" & Settings("matomo_site_id") & "']);"
-                    sScript &= "var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];"
-                    sScript &= "g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);"
-                    sScript &= "})();"
-                    sScript &= "</script>"
+                    Dim sScript As String = "<!-- Matomo Image Code -->"
+                    sScript &= "<img referrerpolicy=""no-referrer-when-downgrade"" src=""" & MatomoHost & "/matomo.php?idsite=" & Settings("matomo_site_id") & "&amp;rec=1"" style=""border:0"" alt="""" />"
                     sScript &= "<!-- End Matomo Code -->"
  
-
                     Me.Page.ClientScript.RegisterStartupScript(GetType(System.String), "DNNMatomo", sScript)
 
                 Else
