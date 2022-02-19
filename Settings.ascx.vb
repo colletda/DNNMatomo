@@ -58,8 +58,8 @@ Namespace Matomo.Modules.DNNMatomo
                     End If
 
                     'MatomoHost
-                    If CType(TabModuleSettings("matomohost"), String) <> "" Then
-                    txtMatomoHost.Text = CType(TabModuleSettings("matomohost"), String)
+                    If CType(TabModuleSettings("matomo_host"), String) <> "" Then
+                    txtMatomoHost.Text = CType(TabModuleSettings("matomo_host"), String)
                     End If
 
                     'HideRoles
@@ -91,7 +91,7 @@ Namespace Matomo.Modules.DNNMatomo
             objModules.UpdateTabModuleSetting(TabModuleId, "matomo_site_id", txtmatomo_site_id.Text)
 
                 'PiwikHost
-            objModules.UpdateTabModuleSetting(TabModuleId, "matomohost", txtMatomoHost.Text)
+            objModules.UpdateTabModuleSetting(TabModuleId, "matomo_host", txtMatomoHost.Text)
 
                 'HideRoles
                 Dim sHideRoles As String = ""
