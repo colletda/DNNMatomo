@@ -17,4 +17,5 @@ Matomo Analytics Module for CMS DNN, based on DNNPiwik from Alberto Velo.
 11. Choose "DNNMatomo" and put the module to a footer pane
 12. Open the "Settings" of the DNNMatomo module
 13. Enter in the "DNNMatomo Settings" tab the URL of your Matomo installation (for example https://myhost/matamo/) and the id of the Matomo side
-14. Click Update
+14. Enter in the "Module Settings" tab in section "Advanced Settings" set "Display Module on all Pages" to "on"
+15. Click Update
