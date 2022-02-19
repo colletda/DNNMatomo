@@ -88,7 +88,7 @@ Namespace Matomo.Modules.DNNMatomo
                     End If
 
                     Dim sScript As String = "<!-- Matomo Image Code -->"
-                    sScript &= "<img referrerpolicy=""no-referrer-when-downgrade"" src=""" & MatomoHost & "/matomo.php?idsite=" & Settings("matomo_site_id") & "&amp;rec=1"" style=""border:0"" alt="""" />"
+                    sScript &= "<img referrerpolicy=""no-referrer-when-downgrade"" src=""" & MatomoHost & "matomo.php?idsite=" & Settings("matomo_site_id") & "&amp;rec=1"" style=""border:0"" alt="""" />"
                     sScript &= "<!-- End Matomo Code -->"
  
                     Me.Page.ClientScript.RegisterStartupScript(GetType(System.String), "DNNMatomo", sScript)
