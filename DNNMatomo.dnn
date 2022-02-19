@@ -1,5 +1,5 @@
 ﻿<dotnetnuke type="Package" version="5.0">
-  <packages><package name="DNNMatomo" type="Module" version="1.0.3">
+  <packages><package name="DNNMatomo" type="Module" version="1.0.5">
   <friendlyName>DNNMatomo</friendlyName>
   <description>Matomo integration module</description>
   <owner>
