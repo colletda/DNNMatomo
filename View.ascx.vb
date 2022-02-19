@@ -80,8 +80,8 @@ Namespace Matomo.Modules.DNNMatomo
 
                 'Matomo Host: if not given assume it's on "localhost/matomo"
                 Dim MatomoHost As String = ""
-                If CType(Settings("MatomoHost"), String) <> "" Then
-                    MatomoHost = Settings("MatomoHost")
+                If CType(Settings("matomohost"), String) <> "" Then
+                    MatomoHost = Settings("matomohost")
                     If Not MatomoHost.EndsWith("/") Then MatomoHost &= "/"
                     Else
                         MatomoHost = "localhost/matomo/"
