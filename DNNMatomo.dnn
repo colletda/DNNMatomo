@@ -83,7 +83,7 @@
         </file>
             <file>
               <path>Images</path>
-              <name>icon_extensions_32px.png</name>
+              <name>matomo.png</name>
             </file>         
       </files>
     </component>
